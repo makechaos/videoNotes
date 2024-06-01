@@ -1,0 +1,39 @@
+{
+  "entry": "Transformers.json",
+  "videoID": "oUhGZMCTHtI",
+  "user": "vikram",
+  "notes": {
+    "1048.853738": [
+      "relative encoding implementation needs changes to self attention",
+      ""
+    ],
+    "49.792099980926515": [
+      "transformer model def",
+      ""
+    ],
+    "360.21660200572205": [
+      "problem of permutation invariant",
+      ""
+    ],
+    "395.4101361602173": [
+      "3 ways  of taking positions info",
+      ""
+    ],
+    "135.94574009727478": [
+      "transformer block",
+      ""
+    ],
+    "287.68536186839293": [
+      "masking for causal self attention",
+      ""
+    ],
+    "216.88056080163574": [
+      "seq2label example",
+      ""
+    ],
+    "508.7828400667572": [
+      "Positional Encoding (with sinusoids K-space vector for unseen lengths)",
+      ""
+    ]
+  }
+}

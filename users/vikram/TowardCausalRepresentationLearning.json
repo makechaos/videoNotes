@@ -1,0 +1,91 @@
+{
+  "entry": "TowardCausalRepresentationLearning",
+  "videoID": "rKZJ0TJWvTk",
+  "notes": {
+    "1048.681587950409": [
+      "why OOD required for agent learning",
+      ""
+    ],
+    "1354.9613510610352": [
+      "Current DL is fast thinking - not logical, implicit knowledge, habitual",
+      ""
+    ],
+    "198.110084": [
+      "what does understanding mean",
+      ""
+    ],
+    "1552.2894961087188": [
+      "Independent causal mechanisms: informationally independent",
+      ""
+    ],
+    "3352.865007940872": [
+      "Actions are localized in space, time - hypothesis replace IID",
+      ""
+    ],
+    "1476.338730082016": [
+      "verbalize knowledge > implicit knowledge (not generalizable, interpretable)",
+      ""
+    ],
+    "1258.582648874115": [
+      "Connection to thinking fast and slow",
+      ""
+    ],
+    "1630.471510792099": [
+      "informationally independent = in bayesian sense its parameters are independent",
+      ""
+    ],
+    "2914.4914189332426": [
+      "Causal variables, learning high level abstractions - creations of mind",
+      ""
+    ],
+    "899.9814141583099": [
+      "OOD = out of distribution, eg. of driving",
+      ""
+    ],
+    "782.485089": [
+      "how compositionality helps in generalization beyond training dist",
+      ""
+    ],
+    "442.28986593896485": [
+      "Missing from current ML - understand, generalize beyond training",
+      ""
+    ],
+    "2814.5475828550416": [
+      "Link or need to attention bottleneck",
+      ""
+    ],
+    "842.30118": [
+      "overfitting training data vs training dist",
+      ""
+    ],
+    "3495.745735": [
+      "Measure of how good representation = how fast it recovers from changes",
+      ""
+    ],
+    "2677.562988856949": [
+      "probablistic rules vs sparse factor graphs, many small graphs",
+      ""
+    ],
+    "670.5977320991822": [
+      "Compositionality ",
+      ""
+    ],
+    "2645.50636": [
+      "power of vebarilizing (verbal domain vs pixels)",
+      ""
+    ],
+    "2713.617696": [
+      "assuming in current DL that high level vars are marginally independent",
+      ""
+    ],
+    "1865.3711858588563": [
+      "System2 inductive priors",
+      ""
+    ],
+    "2608.908149944687": [
+      "Sparse factor graph",
+      ""
+    ]
+  },
+  "user": "vikram"
+}

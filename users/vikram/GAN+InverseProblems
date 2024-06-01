@@ -1,0 +1,83 @@
+{
+  "user": "vikram",
+  "entry": "GAN+InverseProblems",
+  "notes": {
+    "1348.858253": [
+      "referring to need of bigger model or larger size z",
+      ""
+    ],
+    "1904.3680700019074": [
+      "invertible DGM = flows",
+      ""
+    ],
+    "1710.542147": [
+      "necessary condition on the architecture of GAN ",
+      ""
+    ],
+    "2965.9523091792908": [
+      "conditional sampling for blurring",
+      ""
+    ],
+    "66.24151": [
+      "@ intro",
+      ""
+    ],
+    "1413.281174": [
+      "why GAN based output better than DCT, wavelet",
+      ""
+    ],
+    "1321.5226260095367": [
+      "GAN for inpainting, with different loss",
+      ""
+    ],
+    "1206.4500980534058": [
+      "steps for DGM based solution of inv problem ",
+      ""
+    ],
+    "1075.939561": [
+      "key idea of using DGM for sparse inv. problems",
+      ""
+    ],
+    "1999.4677083333195": [
+      "key gadget for invertible, differentiable FLOW",
+      ""
+    ],
+    "2149.352459990463": [
+      "Bayesian compressive sensing",
+      ""
+    ],
+    "2524.376364032425": [
+      "good noise (input) defintion",
+      ""
+    ],
+    "623.64084984169": [
+      "Linear interp in z-space and how it looks in image space",
+      ""
+    ],
+    "1444.7766666666566": [
+      "when GAN is worser than DCT, Wavelet - lack of power to imagine, need bigger models",
+      ""
+    ],
+    "931.7093100667572": [
+      "properties of A (meas. matrix)",
+      ""
+    ],
+    "2469.8069640896456": [
+      "use of composed DGM to solve the training issue in conditional sampling",
+      ""
+    ],
+    "1258.7496520076295": [
+      "when does it work and not work",
+      ""
+    ],
+    "1138.1774438817445": [
+      "how DGM can be used for inv. problem ",
+      ""
+    ],
+    "736.67395": [
+      "Setting for linear inverse problem",
+      ""
+    ]
+  },
+  "videoID": "vivXNCMmA9I"
+}

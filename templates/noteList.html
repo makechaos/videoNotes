@@ -1,0 +1,230 @@
+<html>
+<head>
+<style>
+#users {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#users td, #customers th {
+  border: 1px solid #ddd;
+  padding: 3px;
+}
+
+#users tr:nth-child(even){background-color: #f2f2f2;}
+
+#users tr:hover {background-color: #ddd;cursor: pointer;}
+
+#users th {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+.del {
+    width:2px;
+}
+.button {
+    padding:3px;
+    margin:3px;
+}
+.text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:18;
+    width:50%;
+    margin:3px;
+    padding:5px;
+}
+.pointer {
+    cursor: pointer;SSS
+}
+</style>
+<script>
+    var serverip = "{{serverip}}";
+    var user = "{{user}}";
+    var videoID = "{{videoID}}";
+    var notesData = '{{tableData}}';
+    var entryName = '{{entryName}}';
+    var notes = {};
+    function newName() {
+        entryName = prompt("Entry Name");
+        document.getElementById("entry").innerHTML = "Entry Name:" + entryName;
+    }
+    function gohome() {
+        window.location.href=serverip+"/videoNotes/user={{user}}";
+    }
+    function setVideoID() {
+        player.cueVideoById(videoID);
+        document.getElementById("videoID").innerHTML = 'Video ID: ' + videoID;
+    }
+    function newURL() {
+        var url = prompt("URL", "");
+        videoID = url.split("watch?v=")[1];
+        setVideoID();
+    }
+    function goto(tim){
+        done = false;
+        player.seekTo(parseFloat(tim));
+        player.playVideo();
+    }
+    function deleteNote(tim){
+        delete notes[tim];
+        updateTable();
+    }
+    function httpGet(theUrl) {
+
+    }
+    function update(){
+        var data = {'user':user, 'entry':entryName, 'videoID':videoID, 'notes':notes};
+        var theUrl = serverip+'/videoNotes/add='+JSON.stringify(data);
+        // window.location.href=theUrl;
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.onreadystatechange = function() {
+            var msgEl = document.getElementById("msg");
+            if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+                msgEl.innerHTML = xmlHttp.responseText;
+                msgEl.setAttribute("style","color:grey;");
+            }
+            if (xmlHttp.readyState == 4 && xmlHttp.status == 404) {
+                msgEl.innerHTML = 'something went wrong!';
+                msgEl.setAttribute("style","color:red;");
+            }
+        }
+        xmlHttp.open("GET", theUrl, true); // true for asynchronous
+        xmlHttp.send(null);
+    }
+    function addTag(tim) {
+        tags = prompt('Enter Tags:');
+        notes[tim][1] = tags;
+        updateTable();
+    }
+    function editNote(tim) {
+        var e = prompt("Edit",notes[tim][0]);
+        notes[tim][0] = e;
+        updateTable();
+    }
+    function updateTable() {
+        var notesTim = [];
+        for(var tim in notes) {
+            notesTim.push([parseFloat(tim),tim]);
+        }
+        notesTim.sort(function(a,b){return a[0]-b[0]});
+
+        txt = '<tr><th># Del</th><th>Time</th><th>Note</th><th>Tags</th></tr>';
+        for(var n=0; n<notesTim.length; n++) {
+            tim = notesTim[n][1];
+            var htim = '';
+            var ftim = parseFloat(tim);
+            htim = ''+parseInt(ftim/60)+'m:'+parseInt(ftim%60)+'s';
+
+            txt = txt + '<tr>';
+            txt = txt + '<td class="del" onclick=deleteNote("'+tim+'")>'+(n+1)+'</td>';
+            txt = txt + '<td onclick=goto("'+tim+'")>'+htim+'</td>';
+            txt = txt + '<td onclick=editNote("'+tim+'")>'+notes[tim][0]+'</td>';
+            txt = txt + '<td onclick=addTag("'+tim+'")>'+notes[tim][1]+'</td>';
+            txt = txt + '</tr>';
+
+        }
+        document.getElementById("users").innerHTML = txt;
+    }
+    function addNote() {
+        var el = document.getElementById("newNote");
+        notes[parseFloat(player.getCurrentTime())] = [el.value,''];
+        updateTable();
+        el.value = "";
+    }
+    function autoNote(ele){
+        if(event.key === 'Enter') {
+            addNote();
+        }
+    }
+    function init(){
+        if(notesData.indexOf("tableData}}")<0) {
+            jdata = JSON.parse(notesData);
+            for(var k in jdata) {
+                if(typeof(jdata[k])=='string') {
+                    notes[k] = [jdata[k],''];
+                } else {
+                    notes[k] = jdata[k];
+                }
+            }
+        }
+        updateTable();
+    }
+
+</script>
+</head>
+<body style="position:relative;" onload="init()">
+<div class="text pointer" onclick="gohome()" id="user" >User: {{user}}</div>
+<div class="text pointer" onclick="newName()" id="entry">Entry Name: {{entryName}}</div>
+<div class="text pointer" onclick="newURL()" id="videoID">Video ID: {{videoID}}</div>
+<div style="width:50%;display:block;float:left;">
+    <!-- <iframe src="{{url}}" id="embedVideo"> !-->
+        <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+    <div id="player"></div>
+
+    <script>
+      // 2. This code loads the IFrame Player API code asynchronously.
+      var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      // tag.src = "https://www.youtube.com/embed/K10vD6xA_aw";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      // 3. This function creates an <iframe> (and YouTube player)
+      //    after the API code downloads.
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          //height: '390',
+         // width: '640',
+          // videoId: 'M7lc1UVf-VE',
+          videoId: '{{videoID}}',
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+      }
+
+      // 4. The API will call this function when the video player is ready.
+      function onPlayerReady(event) {
+        // event.target.playVideo();
+      }
+
+      // 5. The API calls this function when the player's state changes.
+      //    The function indicates that when playing a video (state=1),
+      //    the player should play for six seconds and then stop.
+      var done = false;
+      function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING && !done) {
+          setTimeout(pauseVideo, 6000);
+          done = true;
+        }
+      }
+      function stopVideo() {
+        player.stopVideo();
+      }
+      function pauseVideo() {
+        player.pauseVideo();
+      }
+    </script>
+</iframe>
+<input type="text" id="newNote" style="width:90%;padding:3px;margin:10px;" onkeydown="autoNote(this)"></input>
+<button onclick="addNote()" class="button">Add Note</button>
+</div>
+<div style="width:50%;display:block;float:left;">
+<table>
+<tr><td>
+<button onclick="update()"  class="button">Update</button></td><td><div id="msg"></div></td>
+</tr><tr>
+<table id="users">
+    <tr><th>Time</th><th>Note</th><th>Tags</th></tr>
+</table></tr>
+</table>
+</div>
+</body>
+</html>

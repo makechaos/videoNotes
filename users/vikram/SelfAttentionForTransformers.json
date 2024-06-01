@@ -1,0 +1,87 @@
+{
+  "entry": "SelfAttentionForTransformers",
+  "user": "vikram",
+  "videoID": "KmAISyVvE1Y",
+  "notes": {
+    "686.2125099313355": [
+      "example case with movie selection",
+      ""
+    ],
+    "433.8898370782013": [
+      "notes no parameters, linear op (x to y)",
+      ""
+    ],
+    "1000.1337569275207": [
+      "K, Q, V = soft version of dictionary",
+      ""
+    ],
+    "592.195376043869": [
+      "more prop set (not seq) op, perm invar, unlimited Recip field",
+      ""
+    ],
+    "922.5220430457764": [
+      "bells & whistles to improve",
+      ""
+    ],
+    "45.95495612016296": [
+      "start",
+      ""
+    ],
+    "1065.1277581239776": [
+      "attention as soft-dictionary - KEY IDEA",
+      ""
+    ],
+    "255.4509859485016": [
+      "how Wij derived from input",
+      ""
+    ],
+    "1270.9135208989105": [
+      "2 ways of implementation for multi-head",
+      ""
+    ],
+    "309.214367125885": [
+      "Self-attention graphical illustration - single output",
+      ""
+    ],
+    "132.05229501716613": [
+      "Seq2Seq RNN (sequential) vs CNN (only limited receptive field)",
+      ""
+    ],
+    "1327.2242660095367": [
+      "real power: simplicity & cheap compute",
+      ""
+    ],
+    "228.351262043869": [
+      "Wij is not model param, derived value from input",
+      ""
+    ],
+    "1142.587763923706": [
+      "Multi-head attention (capture diff word relation)",
+      ""
+    ],
+    "380.3282659694824": [
+      "Self-attention - vectorized (matrix-ized)",
+      ""
+    ],
+    "76.13787496948243": [
+      "sequence to sequence layers",
+      ""
+    ],
+    "210.14818583215333": [
+      "self-attention - simple representation",
+      ""
+    ],
+    "892.7999610553131": [
+      "specific case of how it works and what is learnt (embedding)",
+      ""
+    ],
+    "832.9883678283386": [
+      "full example of usage,application (vs bag of words)",
+      ""
+    ],
+    "950.1764420705719": [
+      "scaled self-attention (to avoid vanishing grad)",
+      ""
+    ]
+  }
+}

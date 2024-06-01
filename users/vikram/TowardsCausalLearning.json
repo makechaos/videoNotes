@@ -1,0 +1,63 @@
+{
+  "notes": {
+    "2067.227611043869": [
+      "independence of cause and mechanism",
+      ""
+    ],
+    "973.9138388779297": [
+      "kernel trick",
+      ""
+    ],
+    "1717.9856649427795": [
+      "common cause prinicple",
+      ""
+    ],
+    "1567.7506": [
+      "used when there is lot of data, but little understanding of underlying mechanisms",
+      ""
+    ],
+    "693.0449259217987": [
+      "induction problem to generalization",
+      ""
+    ],
+    "1305.613379917984": [
+      "turbulent image to clear (best static) image",
+      ""
+    ],
+    "1987.0178589599457": [
+      "inferring a causal model",
+      ""
+    ],
+    "1190.414677885559": [
+      "example of MRI to CT",
+      ""
+    ],
+    "1326.3538628779297": [
+      "3 aspects of Kernels",
+      ""
+    ],
+    "846.7490618340606": [
+      "Vapnik-Chervonenkis VC dimension",
+      ""
+    ],
+    "466.109054": [
+      "rearraning pixels does not confuse computers",
+      ""
+    ],
+    "1634.4455268149873": [
+      "cause controls the effect, effect has footprint of cause",
+      ""
+    ],
+    "1600.4196809351502": [
+      "good example for need of causation",
+      ""
+    ],
+    "1249.70372715831": [
+      "Imitation learning example",
+      ""
+    ]
+  },
+  "entry": "TowardsCausalLearning.json",
+  "user": "vikram",
+  "videoID": "ek9jwRA2Jio"
+}

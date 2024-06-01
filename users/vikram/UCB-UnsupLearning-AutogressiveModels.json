@@ -1,0 +1,99 @@
+{
+  "entry": "UCB-UnsupLearning-AutogressiveModels.json",
+  "user": "vikram",
+  "videoID": "iyEOk8KCRUw",
+  "notes": {
+    "2422.879727868393": [
+      "Position encoding by providing coordinates",
+      ""
+    ],
+    "7058.654334030518": [
+      "PixelSNAIL - with attention module",
+      ""
+    ],
+    "5676.833520005722": [
+      "Pixel CNN Blind Spot",
+      ""
+    ],
+    "5093.836817868393": [
+      "Wavenet + positional encoding on MNIST ",
+      ""
+    ],
+    "792.0194549523163": [
+      "curse of dimensionality (MNIST)",
+      ""
+    ],
+    "1307.5281900591278": [
+      "make DL output sum to 1 (PDF)",
+      ""
+    ],
+    "7711.75680884932": [
+      "heirarchical (multi-res) way to accelerate and its cons (less expressive)",
+      ""
+    ],
+    "2572.4038070362394": [
+      "How is coordinate fed",
+      ""
+    ],
+    "6151.0062380534055": [
+      "Gated Pixel CNN - to overcome blind spot",
+      ""
+    ],
+    "5867.118192019074": [
+      "how to beat the blind spot using 2x3 filter and pushing output by 1 row down",
+      ""
+    ],
+    "4629.9152979675755": [
+      "MADE (MLP) to ConvNets",
+      ""
+    ],
+    "903.1627708779297": [
+      "fixing train vs. test distribution difference",
+      ""
+    ],
+    "451.29640702479554": [
+      "statistical & computational efficiency",
+      ""
+    ],
+    "7321.729005910354": [
+      "Subsampled image to hi-res image : Super-res",
+      ""
+    ],
+    "3740.866530952316": [
+      "MADE different orderings (even->odd, raster, etc)",
+      ""
+    ],
+    "1706.3324450953673": [
+      "Limited generalization",
+      ""
+    ],
+    "1636.2128890038148": [
+      "toy autoregressive model",
+      ""
+    ],
+    "2082.647801026703": [
+      "Essence of RNN vs Naive DenseNet",
+      ""
+    ],
+    "2779.271351900818": [
+      "Masked autoencoder for dist. est. (MADE)",
+      ""
+    ],
+    "6363.262674849319": [
+      "PixelCNN++ use of gaussian mixture model to reduce representation size",
+      ""
+    ],
+    "7226.676501": [
+      "Class conditional PixelCNN",
+      ""
+    ],
+    "2019.1987899217986": [
+      "RNN autoregressive model",
+      ""
+    ],
+    "3310.0941279618532": [
+      "MADE = masking on DenseNet + restrictions",
+      ""
+    ]
+  }
+}

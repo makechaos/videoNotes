@@ -1,0 +1,47 @@
+<html>
+<head>
+<style>
+#users {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#users td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#users tr:nth-child(even){background-color: #f2f2f2;}
+
+#users tr:hover {background-color: #ddd; cursor: pointer;}
+
+#users th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+<script>
+    var serverip = "{{serverip}}";
+    var user = "{{user}}";
+    function loadNotes(file) {
+        var data = {"user":user, "file":file};
+        window.location.href = serverip+'/videoNotes/notes='+JSON.stringify(data)
+    }
+    function createNew(){
+        var data={"user":user};
+        window.location.href = serverip+'/videoNotes/newNotes='+JSON.stringify(data)
+    }
+</script>
+</head>
+<body>
+<h1>{{user}}</h1>
+<button onclick="createNew()">Create New</button>
+<table style="border:2px;" id="users">
+    {{tableData}}
+</table>
+</body>
+</html>
